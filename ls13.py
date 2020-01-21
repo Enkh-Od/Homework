@@ -1,5 +1,5 @@
 print("-------------------------  Functional Programming:: -------------------------")
-
+"""
 
 
 print("-------------------------  zip():: -------------------------")
@@ -123,3 +123,111 @@ else:
 finally:
     print("It's Final")
 
+var = int(input('Number = '))
+
+if var % 2 == 0:
+    raise Exception("Exception:: It's even number")
+
+var = input(" ")
+if var is int:
+    raise Exception("Exception:: mmmm")
+
+if not type(var) is int:
+    raise TypeError("it's String")
+"""
+
+print("-------------------------  File Handling :: -------------------------")
+print('\r')
+
+f01 = open('Sketch16.txt')
+
+
+print('------------------------- read()------------------------')
+
+print(f01.read(5))#get string 
+
+print('\r')
+
+print(f01.read(2))
+
+print('------------------------- readline()------------------------')
+
+f02 = open('Sketch16.txt', 'r')
+
+print(f02.readline())
+
+print(f02.readline())
+
+print(f02.readline())
+
+
+print('------------------------- for loop -----------------------')
+f03 = open('Sketch16.txt', 'r')
+
+for var in f03:
+    if 'Python, Lesson' in var:
+        pass
+    elif 'Sketch' in var:
+        pass
+    else:
+        print(var)
+print('\r')
+print(f03.read())
+
+print('------------------------- close() -----------------------')
+
+f04 = open('Sketch16.txt', 'r')
+print(f04.readline())
+f04.close()
+
+print('------------------------- write() -----------------------')
+
+# a - append
+
+f05 = open('Sketch16.txt', 'a')
+f05.write('New line, Append')
+f05.close()
+
+f06 = open('Sketch16.txt', 'r')
+print(f06.read())
+f06.close()
+
+f06 = open('Sketch16.txt', 'w')
+f06.write('New line, Overwrote')
+f06.close()
+
+
+f06 = open('Sketch16.txt', 'r')
+print(f06.read())
+f06.close()
+
+print('------------------------- Modules, Packages -----------------------')
+#Build in modules::
+#import
+import random
+import datetime
+from collections import Counter, defaultdict as Defdict
+#random
+print('random:: ', random.randint(0, 10))
+#time
+print('datetime:', datetime.time(22,20,15))
+
+#date
+print('datetime- today:', datetime.date.today())
+
+#counter:::
+print('Counter:: ', Counter([1, 2, 1, 3, 2, 4, 2, 3]))
+
+#defaultdict::
+#Error::
+myDict = {'a': 1, 'b': 2, 'c': 3}
+#var = myDict['d']
+#print(var)
+myDict = Defdict(lambda:'No key from Lambda', myDict)
+var = myDict['d']
+print(var)
+
+def no_key():
+    return 'No key from Function'
+def_dic = Defdict(no_key, {'a': 1, 'b': 2, 'c': 3})
+print(def_dic['d'])
